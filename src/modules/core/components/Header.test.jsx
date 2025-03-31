@@ -22,11 +22,11 @@ describe('Header Component', () => {
     );
 
     // Check if the logo is rendered
-    expect(screen.getByText('Jewish Gumtree')).toBeInTheDocument();
+    expect(screen.getByText('Shtetl')).toBeInTheDocument();
     
     // Check if navigation items are rendered
-    expect(screen.getByText('Browse All')).toBeInTheDocument();
-    expect(screen.getByText('Categories')).toBeInTheDocument();
+    expect(screen.getByText('Marketplace')).toBeInTheDocument();
+    expect(screen.getByText('Events')).toBeInTheDocument();
     
     // Check if the sign in button is rendered (when user is null)
     expect(screen.getByText('Sign In')).toBeInTheDocument();
