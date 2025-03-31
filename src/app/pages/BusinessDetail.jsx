@@ -142,7 +142,7 @@ function BusinessDetail() {
                   height="100%"
                   frameBorder="0"
                   title="Map"
-                  src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyBtdr4-_mnXbhBz2Qxx4LdcnPFjZMCiVdU&q=${encodeURIComponent(business.address || business.location)}`}
+                  src={`https://www.google.com/maps/embed/v1/place?key=${import.meta.env.VITE_PUBLIC_GOOGLE_MAPS_API_KEY}&q=${encodeURIComponent(business.address || business.location)}`}
                   allowFullScreen
                 ></iframe>
               </div>
