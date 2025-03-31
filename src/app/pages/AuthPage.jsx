@@ -25,10 +25,10 @@ function AuthPage() {
       <div className="max-w-md w-full space-y-8 bg-white p-8 rounded-lg shadow-md">
         <div className="text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-2">
-            Sign in to Jewish Gumtree
+            Sign in to Shtetl
           </h2>
           <p className="text-gray-600 mb-6">
-            Connect with the Jewish community marketplace
+            Connect with the Jewish community
           </p>
           
           <div className="mb-4 text-blue-600 font-medium">

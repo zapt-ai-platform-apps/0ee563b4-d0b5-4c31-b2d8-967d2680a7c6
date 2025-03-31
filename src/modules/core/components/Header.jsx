@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '@/modules/auth/hooks/useAuth';
 import { FaSearch, FaUser, FaPlus, FaSignOutAlt, FaBars } from 'react-icons/fa';
-import { categories } from '@/modules/listings/data/categories';
 
 function Header() {
   const { user, signOut } = useAuth();
@@ -13,7 +12,7 @@ function Header() {
   const handleSearch = (e) => {
     e.preventDefault();
     if (searchTerm.trim()) {
-      navigate(`/listings?search=${encodeURIComponent(searchTerm)}`);
+      navigate(`/marketplace?search=${encodeURIComponent(searchTerm)}`);
       setSearchTerm('');
     }
   };
@@ -35,13 +34,13 @@ function Header() {
             <Link to="/" className="text-2xl font-bold flex items-center">
               <img 
                 src="https://supabase.zapt.ai/storage/v1/render/image/public/icons/c7bd5333-787f-461f-ae9b-22acbc0ed4b0/55145115-0624-472f-96b9-d5d88aae355f.png?width=40&height=40" 
-                alt="Jewish Gumtree" 
+                alt="Shtetl" 
                 className="mr-2 h-10 w-10"
               />
-              Jewish Gumtree
+              Shtetl
             </Link>
             <button 
-              className="md:hidden text-white"
+              className="md:hidden text-white cursor-pointer"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               <FaBars size={24} />
@@ -52,7 +51,7 @@ function Header() {
             <form onSubmit={handleSearch} className="relative">
               <input
                 type="text"
-                placeholder="Search for items..."
+                placeholder="Search for items, events, jobs, or businesses..."
                 className="w-full py-2 px-4 pr-10 rounded-md text-gray-800 box-border"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
@@ -70,39 +69,39 @@ function Header() {
             <ul className="flex flex-col md:flex-row md:items-center space-y-2 md:space-y-0 md:space-x-4">
               <li>
                 <Link 
-                  to="/listings" 
+                  to="/marketplace" 
                   className="block py-1 hover:text-blue-200 transition-colors"
                 >
-                  Browse All
+                  Marketplace
                 </Link>
               </li>
-              <li className="relative group">
-                <button className="py-1 hover:text-blue-200 transition-colors flex items-center">
-                  Categories
-                </button>
-                <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-10 hidden group-hover:block">
-                  {categories.map(category => (
-                    <Link
-                      key={category.slug}
-                      to={`/category/${category.slug}`}
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                    >
-                      {category.name}
-                    </Link>
-                  ))}
-                </div>
+              <li>
+                <Link 
+                  to="/events" 
+                  className="block py-1 hover:text-blue-200 transition-colors"
+                >
+                  Events
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/jobs" 
+                  className="block py-1 hover:text-blue-200 transition-colors"
+                >
+                  Jobs
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/businesses" 
+                  className="block py-1 hover:text-blue-200 transition-colors"
+                >
+                  Businesses
+                </Link>
               </li>
 
               {user ? (
                 <>
-                  <li>
-                    <Link 
-                      to="/create-listing" 
-                      className="flex items-center py-1 hover:text-blue-200 transition-colors"
-                    >
-                      <FaPlus className="mr-1" /> Post Ad
-                    </Link>
-                  </li>
                   <li>
                     <Link 
                       to="/profile" 

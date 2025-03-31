@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { categories } from '@/modules/listings/data/categories';
 
 function Footer() {
   const year = new Date().getFullYear();
@@ -10,25 +9,35 @@ function Footer() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-xl font-bold mb-4">Jewish Gumtree</h3>
+            <h3 className="text-xl font-bold mb-4">Shtetl</h3>
             <p className="text-gray-300 mb-4">
-              Buy and sell items within the Jewish community. Find kosher goods, Judaica items, holiday supplies, and more.
+              A digital hub designed to connect and empower the Jewish community through marketplace, events, jobs, and business listings.
             </p>
           </div>
           
           <div>
-            <h4 className="text-lg font-semibold mb-4">Categories</h4>
+            <h4 className="text-lg font-semibold mb-4">Our Services</h4>
             <ul className="space-y-2">
-              {categories.slice(0, 6).map(category => (
-                <li key={category.slug}>
-                  <Link 
-                    to={`/category/${category.slug}`}
-                    className="text-gray-300 hover:text-white transition-colors"
-                  >
-                    {category.name}
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link to="/marketplace" className="text-gray-300 hover:text-white transition-colors">
+                  Marketplace
+                </Link>
+              </li>
+              <li>
+                <Link to="/events" className="text-gray-300 hover:text-white transition-colors">
+                  Events Calendar
+                </Link>
+              </li>
+              <li>
+                <Link to="/jobs" className="text-gray-300 hover:text-white transition-colors">
+                  Jobs Board
+                </Link>
+              </li>
+              <li>
+                <Link to="/businesses" className="text-gray-300 hover:text-white transition-colors">
+                  Business Directory
+                </Link>
+              </li>
             </ul>
           </div>
           
@@ -41,13 +50,8 @@ function Footer() {
                 </Link>
               </li>
               <li>
-                <Link to="/listings" className="text-gray-300 hover:text-white transition-colors">
-                  Browse All
-                </Link>
-              </li>
-              <li>
-                <Link to="/create-listing" className="text-gray-300 hover:text-white transition-colors">
-                  Post an Ad
+                <Link to="/profile" className="text-gray-300 hover:text-white transition-colors">
+                  My Account
                 </Link>
               </li>
               <li>
@@ -84,7 +88,7 @@ function Footer() {
         
         <div className="flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            &copy; {year} Jewish Gumtree. All rights reserved.
+            &copy; {year} Shtetl. All rights reserved.
           </p>
           <div className="flex space-x-4 mt-4 md:mt-0">
             <a href="#" className="text-gray-400 hover:text-white transition-colors">

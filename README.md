@@ -1,15 +1,31 @@
-# Jewish Gumtree
+# Shtetl - Digital Hub for the Jewish Community
 
-A Jewish community marketplace application for buying and selling items, services, and more.
+Shtetl is a seamless digital hub designed to connect and empower the Jewish community. The platform brings together individuals, businesses, and organizations, integrating essential community services into one easily accessible space.
 
 ## Features
 
-- User authentication
-- Create and browse listings
-- Filter by category, price, location
-- Shabbat-aware listings
-- User profiles
-- Responsive design
+- **Community Marketplace**
+  - Free and featured listings for items, services, and giveaways
+  - User-to-user messaging for transactions
+
+- **Community Calendar**
+  - Public and private event listings
+  - Categories: Simchas, business events, school calendars, organizational events, charity campaigns, shul schedules, and hall availability
+  - Location-based filtering
+
+- **Jobs Board**
+  - Posting and searching for job opportunities
+  - Featured job listings for higher visibility
+  - Filtering by location, industry, and job type
+
+- **Business Directory**
+  - Platform for businesses to list and promote their services
+  - Featured business listings for premium visibility
+
+- **User Accounts & Authentication**
+  - Google, email, or phone number login
+  - Profile creation for individuals and businesses
+  - Ability to manage posts, jobs, events, and listings
 
 ## Tech Stack
 

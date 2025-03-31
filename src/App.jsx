@@ -7,9 +7,19 @@ import ListingsPage from './app/pages/ListingsPage';
 import ListingDetail from './app/pages/ListingDetail';
 import CreateListing from './app/pages/CreateListing';
 import CategoryPage from './app/pages/CategoryPage';
-import Profile from './app/pages/Profile';
+import ProfilePage from './app/pages/ProfilePage';
 import AuthPage from './app/pages/AuthPage';
 import NotFound from './app/pages/NotFound';
+import EventsPage from './app/pages/EventsPage';
+import EventDetail from './app/pages/EventDetail';
+import CreateEvent from './app/pages/CreateEvent';
+import JobsPage from './app/pages/JobsPage';
+import JobDetail from './app/pages/JobDetail';
+import CreateJob from './app/pages/CreateJob';
+import BusinessesPage from './app/pages/BusinessesPage';
+import BusinessDetail from './app/pages/BusinessDetail';
+import CreateBusiness from './app/pages/CreateBusiness';
+
 import ProtectedRoute from './modules/auth/ProtectedRoute';
 import { useAuth } from './modules/auth/hooks/useAuth';
 import ZaptBadge from './modules/core/components/ZaptBadge';
@@ -32,19 +42,51 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/auth" element={<AuthPage />} />
-          <Route path="/listings" element={<ListingsPage />} />
-          <Route path="/listings/:id" element={<ListingDetail />} />
-          <Route path="/category/:categorySlug" element={<CategoryPage />} />
-          <Route path="/create-listing" element={
+          
+          {/* Marketplace Routes */}
+          <Route path="/marketplace" element={<ListingsPage />} />
+          <Route path="/marketplace/:id" element={<ListingDetail />} />
+          <Route path="/marketplace/category/:categorySlug" element={<CategoryPage />} />
+          <Route path="/marketplace/create" element={
             <ProtectedRoute>
               <CreateListing />
             </ProtectedRoute>
           } />
-          <Route path="/profile" element={
+          
+          {/* Calendar Routes */}
+          <Route path="/events" element={<EventsPage />} />
+          <Route path="/events/:id" element={<EventDetail />} />
+          <Route path="/events/create" element={
             <ProtectedRoute>
-              <Profile />
+              <CreateEvent />
             </ProtectedRoute>
           } />
+          
+          {/* Jobs Routes */}
+          <Route path="/jobs" element={<JobsPage />} />
+          <Route path="/jobs/:id" element={<JobDetail />} />
+          <Route path="/jobs/create" element={
+            <ProtectedRoute>
+              <CreateJob />
+            </ProtectedRoute>
+          } />
+          
+          {/* Business Directory Routes */}
+          <Route path="/businesses" element={<BusinessesPage />} />
+          <Route path="/businesses/:id" element={<BusinessDetail />} />
+          <Route path="/businesses/create" element={
+            <ProtectedRoute>
+              <CreateBusiness />
+            </ProtectedRoute>
+          } />
+          
+          {/* User Routes */}
+          <Route path="/profile" element={
+            <ProtectedRoute>
+              <ProfilePage />
+            </ProtectedRoute>
+          } />
+          
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
