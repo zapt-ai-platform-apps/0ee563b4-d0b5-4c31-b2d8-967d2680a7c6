@@ -5,44 +5,51 @@ function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-800 text-white pt-10 pb-6">
+    <footer className="bg-gradient-to-r from-gray-900 to-gray-800 text-white pt-10 pb-6">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-xl font-bold mb-4">Shtetl</h3>
+            <h3 className="text-xl font-bold mb-4 flex items-center">
+              <img 
+                src="https://supabase.zapt.ai/storage/v1/render/image/public/icons/c7bd5333-787f-461f-ae9b-22acbc0ed4b0/55145115-0624-472f-96b9-d5d88aae355f.png?width=30&height=30" 
+                alt="Shtetl" 
+                className="mr-2 h-7 w-7"
+              />
+              Shtetl
+            </h3>
             <p className="text-gray-300 mb-4">
               A digital hub designed to connect and empower the Jewish community through marketplace, events, jobs, and business listings.
             </p>
           </div>
           
           <div>
-            <h4 className="text-lg font-semibold mb-4">Our Services</h4>
+            <h4 className="text-lg font-semibold mb-4 text-yellow-300">Our Services</h4>
             <ul className="space-y-2">
               <li>
-                <Link to="/marketplace" className="text-gray-300 hover:text-white transition-colors">
-                  Marketplace
+                <Link to="/marketplace" className="text-gray-300 hover:text-white transition-colors flex items-center">
+                  <span className="mr-2">🛒</span> Marketplace
                 </Link>
               </li>
               <li>
-                <Link to="/events" className="text-gray-300 hover:text-white transition-colors">
-                  Events Calendar
+                <Link to="/events" className="text-gray-300 hover:text-white transition-colors flex items-center">
+                  <span className="mr-2">📅</span> Events Calendar
                 </Link>
               </li>
               <li>
-                <Link to="/jobs" className="text-gray-300 hover:text-white transition-colors">
-                  Jobs Board
+                <Link to="/jobs" className="text-gray-300 hover:text-white transition-colors flex items-center">
+                  <span className="mr-2">💼</span> Jobs Board
                 </Link>
               </li>
               <li>
-                <Link to="/businesses" className="text-gray-300 hover:text-white transition-colors">
-                  Business Directory
+                <Link to="/businesses" className="text-gray-300 hover:text-white transition-colors flex items-center">
+                  <span className="mr-2">🏢</span> Business Directory
                 </Link>
               </li>
             </ul>
           </div>
           
           <div>
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+            <h4 className="text-lg font-semibold mb-4 text-yellow-300">Quick Links</h4>
             <ul className="space-y-2">
               <li>
                 <Link to="/" className="text-gray-300 hover:text-white transition-colors">
@@ -63,7 +70,7 @@ function Footer() {
           </div>
           
           <div>
-            <h4 className="text-lg font-semibold mb-4">Community</h4>
+            <h4 className="text-lg font-semibold mb-4 text-yellow-300">Community</h4>
             <ul className="space-y-2">
               <li>
                 <a href="#" className="text-gray-300 hover:text-white transition-colors">

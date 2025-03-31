@@ -27,7 +27,7 @@ function Header() {
   };
 
   return (
-    <header className="bg-blue-600 text-white shadow-md">
+    <header className="bg-gradient-to-r from-blue-700 to-blue-600 text-white shadow-lg">
       <div className="container mx-auto py-4">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between">
           <div className="flex items-center justify-between">
@@ -52,7 +52,7 @@ function Header() {
               <input
                 type="text"
                 placeholder="Search for items, events, jobs, or businesses..."
-                className="w-full py-2 px-4 pr-10 rounded-md text-gray-800 box-border"
+                className="w-full py-2 px-4 pr-10 rounded-full text-gray-800 box-border focus:ring-2 focus:ring-blue-300 focus:outline-none shadow-inner"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
@@ -66,11 +66,11 @@ function Header() {
           </div>
 
           <nav className={`mt-4 md:mt-0 ${isMobileMenuOpen ? 'block' : 'hidden md:flex'}`}>
-            <ul className="flex flex-col md:flex-row md:items-center space-y-2 md:space-y-0 md:space-x-4">
+            <ul className="flex flex-col md:flex-row md:items-center space-y-2 md:space-y-0 md:space-x-6">
               <li>
                 <Link 
                   to="/marketplace" 
-                  className="block py-1 hover:text-blue-200 transition-colors"
+                  className="block py-1 hover:text-yellow-200 transition-colors font-medium"
                 >
                   Marketplace
                 </Link>
@@ -78,7 +78,7 @@ function Header() {
               <li>
                 <Link 
                   to="/events" 
-                  className="block py-1 hover:text-blue-200 transition-colors"
+                  className="block py-1 hover:text-yellow-200 transition-colors font-medium"
                 >
                   Events
                 </Link>
@@ -86,7 +86,7 @@ function Header() {
               <li>
                 <Link 
                   to="/jobs" 
-                  className="block py-1 hover:text-blue-200 transition-colors"
+                  className="block py-1 hover:text-yellow-200 transition-colors font-medium"
                 >
                   Jobs
                 </Link>
@@ -94,7 +94,7 @@ function Header() {
               <li>
                 <Link 
                   to="/businesses" 
-                  className="block py-1 hover:text-blue-200 transition-colors"
+                  className="block py-1 hover:text-yellow-200 transition-colors font-medium"
                 >
                   Businesses
                 </Link>
@@ -105,7 +105,7 @@ function Header() {
                   <li>
                     <Link 
                       to="/profile" 
-                      className="flex items-center py-1 hover:text-blue-200 transition-colors"
+                      className="flex items-center py-1 hover:text-yellow-200 transition-colors font-medium"
                     >
                       <FaUser className="mr-1" /> My Account
                     </Link>
@@ -113,7 +113,7 @@ function Header() {
                   <li>
                     <button 
                       onClick={handleSignOut}
-                      className="flex items-center py-1 hover:text-blue-200 transition-colors cursor-pointer"
+                      className="flex items-center py-1 hover:text-yellow-200 transition-colors cursor-pointer font-medium"
                     >
                       <FaSignOutAlt className="mr-1" /> Sign Out
                     </button>
@@ -123,7 +123,7 @@ function Header() {
                 <li>
                   <Link 
                     to="/auth" 
-                    className="py-1 px-3 bg-white text-blue-600 rounded-md hover:bg-blue-100 transition-colors"
+                    className="py-2 px-4 bg-yellow-400 text-blue-900 rounded-full hover:bg-yellow-300 transition-colors shadow-md font-medium"
                   >
                     Sign In
                   </Link>
